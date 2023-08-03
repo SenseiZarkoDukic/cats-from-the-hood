@@ -1,11 +1,20 @@
 export default function App() {
   return (
     <div className="App">
-      <header className="App-header">CATS FROM THE HOOD</header>
+      <Header />
     </div>
   );
 }
 
 function Header() {
-  return <header className="App-header">CATS FROM THE HOOD</header>;
+  return (
+    <header className="App-header">
+      <Logo />
+      <h1>CATS FROM THE HOOD</h1>
+    </header>
+  );
+}
+
+function Logo() {
+  return <image></image>;
 }
