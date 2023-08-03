@@ -20,7 +20,7 @@ h1 {
 }
 
 h2 {
-  font-size: 38px;
+  font-size: 42px;
 }
 
 p {
@@ -60,23 +60,33 @@ article {
 }
 
 .AboutUs {
-  background-color: #769d1c74;
+  background-color: rgba(118, 157, 28, 0.455);
   font-size: 36px;
   text-align: center;
   justify-self: center;
-  padding: 100px;
+  padding: 50px;
+}
+
+.headline-small {
+  padding-bottom: 50px;
 }
 
 .main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  background-image: linear-gradient(to bottom, rgb(3, 55, 68), rgb(7, 93, 4));
 }
 
 .main-part-one {
   background-color: rgba(188, 201, 132, 0.289);
-  padding: 30px;
+  font-size: 34px;
+  color: white;
+  text-shadow: 1px 1px 2px pink;
+  padding: 50px;
 }
 .main-part-two {
   background-color: rgb(188, 201, 132);
-  padding: 30px;
+  font-size: 34px;
+  text-shadow: rgba(207, 232, 243, 0.536) 1px 0 10px;
+  padding: 50px;
 }
