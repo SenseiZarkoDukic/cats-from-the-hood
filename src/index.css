@@ -120,3 +120,6 @@ article {
 .cat-li {
   list-style: none;
 }
+.cat-image {
+  width: 400px;
+}

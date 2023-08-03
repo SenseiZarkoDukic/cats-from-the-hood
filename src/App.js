@@ -111,10 +111,14 @@ function CatsList() {
   );
 }
 
-function Cat(cat) {
+function Cat({ cat }) {
   return (
     <li className="cat-li">
-      {/* <img src={cat.image + cat.name + ".jpg"} alt={cat.name} /> */}
+      <img
+        className="cat-image"
+        src={cat.image + cat.name + ".jpg"}
+        alt={cat.name}
+      />
     </li>
   );
 }
