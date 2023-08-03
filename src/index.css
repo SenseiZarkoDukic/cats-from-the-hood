@@ -1,3 +1,7 @@
+.border-radius {
+  border-radius: 50%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -13,6 +17,10 @@ code {
 }
 h1 {
   font-size: 42px;
+}
+
+h2 {
+  font-size: 38px;
 }
 
 p {
@@ -57,4 +65,18 @@ article {
   text-align: center;
   justify-self: center;
   padding: 100px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.main-part-one {
+  background-color: rgba(188, 201, 132, 0.289);
+  padding: 30px;
+}
+.main-part-two {
+  background-color: rgb(188, 201, 132);
+  padding: 30px;
 }
