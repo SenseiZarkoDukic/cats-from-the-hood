@@ -23,6 +23,10 @@ h2 {
   font-size: 42px;
 }
 
+li {
+  list-style-type: none;
+}
+
 p {
   font-size: 36px;
   font-style: oblique;
@@ -38,12 +42,15 @@ article {
 }
 
 .App-header {
-  background-color: rgba(253, 207, 184, 0.363);
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+
   gap: 100px;
-  padding: 100px;
+  padding: 50px;
+
+  background-color: rgba(253, 207, 184, 0.363);
 }
 
 .logo {
@@ -59,7 +66,26 @@ article {
   gap: 100px;
 }
 
+.Menu {
+  background-color: #f4beb211;
+  box-shadow: 12px 12px 2px 1px #f4beb2bd;
+  border-radius: 50%;
+}
+
+.navigation {
+  font-style: italic;
+  font-weight: 650;
+}
+
+.navigation-list {
+  text-align: right;
+  font-size: 36px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
 .AboutUs {
+  height: 100vh;
   background-color: rgba(118, 157, 28, 0.455);
   font-size: 36px;
   text-align: center;

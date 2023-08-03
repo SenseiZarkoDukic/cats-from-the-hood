@@ -56,8 +56,15 @@ function Logo() {
 
 function Menu() {
   return (
-    <div>
-      <h3>Navigation</h3>
+    <div className="Menu">
+      <h1 className="navigation">Navigation</h1>
+      <ul className="navigation-list">
+        <li>Home</li>
+        <li>About us</li>
+        <li>Our cats</li>
+        <li>Add new cat</li>
+        <li>Contact us</li>
+      </ul>
     </div>
   );
 }
@@ -73,7 +80,7 @@ function AboutUs() {
             things in common. Primarely, we all live in the third part of
             Skojevsko Naselje that is located in Municipality of Rakovica -
             Belgrade, Serbia. Second, we all have big passion for cats and made
-            some budget to make their life in out neighbourhood the best
+            some budget to make their life in our neighbourhood the best
             possible for any living cat.
           </p>
         </div>
@@ -107,7 +114,7 @@ function CatsList() {
 function Cat(cat) {
   return (
     <li className="cat-li">
-      <img src={cat.image + cat.name + ".jpg"} alt={cat.name} />
+      {/* <img src={cat.image + cat.name + ".jpg"} alt={cat.name} /> */}
     </li>
   );
 }
