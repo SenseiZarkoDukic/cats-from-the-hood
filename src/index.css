@@ -14,8 +14,19 @@ code {
 
 .app {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .app-header {
   display: flex;
+  gap: 60px;
+}
+
+.logo {
+  width: 400px;
+  height: 400px;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
 }

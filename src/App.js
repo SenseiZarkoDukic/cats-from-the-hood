@@ -18,7 +18,11 @@ function Header() {
 function Logo() {
   return (
     <div>
-      <image src="public\Images\Cats_LOGO.jpg" alt="cats from the hood logo" />
+      <img
+        className="logo"
+        src=".\Images\Cats_LOGO.jpg"
+        alt="cats from the hood logo"
+      />
     </div>
   );
 }
