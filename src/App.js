@@ -1,8 +1,32 @@
+const cats = [
+  {
+    name: "Masha",
+    Father: "Kmeka",
+    Mother: "Felixa",
+    color: "black and white",
+    description:
+      "Loves to eat and to be cuddled. Good with humans and cats, like to paw aggressive male cats. Strong character",
+    image: "./Images/",
+    id: "001",
+  },
+  {
+    name: "Tigrich",
+    Father: "Kmeka",
+    Mother: "Felixa",
+    color: "black and white",
+    description:
+      "He is castrated male. Truly big cat! Loves to play a lot with cats and humans and to be cuddled. Amazing friendly character. Sofia is taking the most care of him",
+    image: ".Images/",
+    id: "002",
+  },
+];
+
 export default function App() {
   return (
     <div className="App">
       <Header />
       <AboutUs />
+      <CatsList />
     </div>
   );
 }
@@ -65,5 +89,25 @@ function AboutUs() {
         </div>
       </main>
     </article>
+  );
+}
+
+function CatsList() {
+  return (
+    <div className="CatsList">
+      <ul>
+        {cats.map((cat) => (
+          <Cat cat={cat} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function Cat(cat) {
+  return (
+    <li className="cat-li">
+      <img src={cat.image + cat.name + ".jpg"} alt={cat.name} />
+    </li>
   );
 }

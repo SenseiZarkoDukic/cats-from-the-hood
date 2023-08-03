@@ -90,3 +90,7 @@ article {
   text-shadow: rgba(207, 232, 243, 0.536) 1px 0 10px;
   padding: 50px;
 }
+
+.cat-li {
+  list-style: none;
+}
