@@ -16,5 +16,9 @@ function Header() {
 }
 
 function Logo() {
-  return <image></image>;
+  return (
+    <div>
+      <image src="public\Images\Cats_LOGO.jpg" alt="cats from the hood logo" />
+    </div>
+  );
 }
