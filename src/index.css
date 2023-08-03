@@ -117,6 +117,12 @@ article {
   padding: 50px;
 }
 
+.cats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  gap: 50px;
+}
+
 .cat-li {
   list-style: none;
 }

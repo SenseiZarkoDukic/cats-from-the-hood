@@ -76,12 +76,12 @@ function AboutUs() {
       <main className="main">
         <div className="border-radius">
           <p className="main-part-one">
-            We are group of neighbours and friends that have have some nice
-            things in common. Primarely, we all live in the third part of
-            Skojevsko Naselje that is located in Municipality of Rakovica -
-            Belgrade, Serbia. Second, we all have big passion for cats and made
-            some budget to make their life in our neighbourhood the best
-            possible for any living cat.
+            We are group of neighbours and friends that have some nice things in
+            common. Primarely, we all live in the third part of Skojevsko
+            Naselje that is located in Municipality of Rakovica - Belgrade,
+            Serbia. Second, we all have big passion for cats and made some
+            budget to make their life in our neighbourhood the best possible for
+            any living cat.
           </p>
         </div>
         <div className="border-radius">
@@ -102,7 +102,7 @@ function AboutUs() {
 function CatsList() {
   return (
     <div className="CatsList">
-      <ul>
+      <ul className="cats">
         {cats.map((cat) => (
           <Cat cat={cat} />
         ))}
@@ -119,6 +119,8 @@ function Cat({ cat }) {
         src={cat.image + cat.name + ".jpg"}
         alt={cat.name}
       />
+      <h2>My name is {cat.name}</h2>
+      {cat.Father && <p>My father name is {cat.Father}</p>}
     </li>
   );
 }
