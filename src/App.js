@@ -2,6 +2,7 @@ export default function App() {
   return (
     <div className="App">
       <Header />
+      <AboutUs />
     </div>
   );
 }
@@ -35,4 +36,8 @@ function Menu() {
       <h3>Navigation</h3>
     </div>
   );
+}
+
+function AboutUs() {
+  return <article className="AboutUs">ABOUT US</article>;
 }

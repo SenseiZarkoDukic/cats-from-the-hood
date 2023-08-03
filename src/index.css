@@ -20,6 +20,10 @@ p {
   font-style: oblique;
 }
 
+article {
+  width: 100%;
+}
+
 .App {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
@@ -45,4 +49,12 @@ p {
   display: flex;
   flex-direction: column;
   gap: 100px;
+}
+
+.AboutUs {
+  background-color: #769d1c74;
+  font-size: 36px;
+  text-align: center;
+  justify-self: center;
+  padding: 100px;
 }
