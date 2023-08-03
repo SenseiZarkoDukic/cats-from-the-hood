@@ -11,22 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.app {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+h1 {
+  font-size: 42px;
 }
 
-.app-header {
+p {
+  font-size: 36px;
+  font-style: oblique;
+}
+
+.App {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.App-header {
+  background-color: rgba(253, 207, 184, 0.363);
   display: flex;
-  gap: 60px;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 100px;
+  padding: 100px;
 }
 
 .logo {
-  width: 400px;
-  height: 400px;
-  border-top-left-radius: 50% 50%;
-  border-top-right-radius: 50% 50%;
-  border-bottom-right-radius: 50% 50%;
-  border-bottom-left-radius: 50% 50%;
+  width: 350px;
+  height: 350px;
+  border: 0.5rem solid rgba(220, 70, 50, 0.284);
+  border-radius: 50%;
+}
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 }
