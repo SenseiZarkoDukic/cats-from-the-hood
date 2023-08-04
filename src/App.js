@@ -16,7 +16,7 @@ const cats = [
     color: "black and white",
     description:
       "He is castrated male. Truly big cat! Loves to play a lot with cats and humans and to be cuddled. Amazing friendly character. Sofia is taking the most care of him",
-    image: ".Images/",
+    image: "./Images/",
     id: "002",
   },
 ];
@@ -119,8 +119,10 @@ function Cat({ cat }) {
         src={cat.image + cat.name + ".jpg"}
         alt={cat.name}
       />
-      <h2>My name is {cat.name}</h2>
-      {cat.Father && <p>My father name is {cat.Father}</p>}
+      <h2>My name is {cat.name}.</h2>
+      {cat.Father && <p>My father's name is {cat.Father}.</p>}
+      {cat.Mother && <p>My Mother's name is {cat.Mother}.</p>}
+      <p>The color of my fur is {cat.color}.</p>
     </li>
   );
 }
