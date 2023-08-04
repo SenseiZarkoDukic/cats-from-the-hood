@@ -27,6 +27,7 @@ export default function App() {
       <Header />
       <AboutUs />
       <CatsList />
+      <AddNewCat />
     </div>
   );
 }
@@ -145,5 +146,13 @@ function Cat({ cat }) {
 }
 
 function AddNewCat() {
-  return;
+  return (
+    <div className="AddNewCat">
+      <h1 className="add-cat-headline">Add New Cat</h1>
+      <form className="addNewCatForm">
+        <label>Enter cat's name</label>
+        <input type="text"></input>
+      </form>
+    </div>
+  );
 }

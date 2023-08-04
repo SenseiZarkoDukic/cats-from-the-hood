@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+}
+
 .border-radius {
   border-radius: 50%;
 }
@@ -47,7 +51,7 @@ article {
 
 .App {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(4, [col-start] 1fr [col-end]);
 }
 
 .App-header {
@@ -132,7 +136,7 @@ article {
 .cats {
   background-color: rgba(253, 150, 82, 0.549);
   display: grid;
-  grid-template-columns: repeat(auto-fill, 400px);
+  grid-template-columns: repeat(10, 1fr);
   gap: 50px;
 }
 
@@ -159,4 +163,14 @@ article {
   font-size: 24px;
   font-weight: 500;
   background-color: rgba(253, 150, 82, 0.549);
+}
+
+.AddNewCat {
+  height: 100vh;
+  justify-self: center;
+  grid-column: 5, -1;
+  grid-row: auto;
+}
+
+.add-cat-headline {
 }
