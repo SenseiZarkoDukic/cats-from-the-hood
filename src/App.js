@@ -5,7 +5,7 @@ const cats = [
     Mother: "Felixa",
     color: "black and white",
     description:
-      "Loves to eat and to be cuddled. Good with humans and cats, like to paw aggressive male cats. Strong character",
+      "I am sterilized cat that loves to eat very much and very often. I specially love to be cuddled, and don't mind aggresive petting as well. I love to be with my humans and cats. Like to paw aggressive male cats. I have really strong character. Dogs and puppies, don't mess with me, I have very dangerous origin, just ask around who was Kmeka!",
     image: "./Images/",
     id: "001",
   },
@@ -15,7 +15,7 @@ const cats = [
     Mother: "Felixa",
     color: "black and white",
     description:
-      "He is castrated male. Truly big cat! Loves to play a lot with cats and humans and to be cuddled. Amazing friendly character. Sofia is taking the most care of him",
+      "I am castrated male. Truly big cat! Love to play a lot with cats and humans and to be cuddled. I have amazing friendly character. Sofia is taking the most care of me",
     image: "./Images/",
     id: "002",
   },
@@ -119,10 +119,31 @@ function Cat({ cat }) {
         src={cat.image + cat.name + ".jpg"}
         alt={cat.name}
       />
-      <h2>My name is {cat.name}.</h2>
-      {cat.Father && <p>My father's name is {cat.Father}.</p>}
-      {cat.Mother && <p>My Mother's name is {cat.Mother}.</p>}
-      <p>The color of my fur is {cat.color}.</p>
+      <h2 className="cat-headline">😸 My name is {cat.name}.</h2>
+      {cat.Father && (
+        <p className="text-about-cat">
+          <span className="no-italic">🦁</span> My father's name is {cat.Father}
+          .
+        </p>
+      )}
+      {cat.Mother && (
+        <p className="text-about-cat">
+          <span className="no-italic">🐯</span> My Mother's name is {cat.Mother}
+          .
+        </p>
+      )}
+      <p className="text-about-cat">
+        <span className="no-italic">🐈‍⬛</span> The color of my fur is {cat.color}
+        .
+      </p>
+      <h3 className="cat-headline">😺 MORE ABOUT ME</h3>
+      <p className="text-about-cat">
+        <span className="no-italic">😻</span> {cat.description}
+      </p>
     </li>
   );
+}
+
+function AddNewCat() {
+  return;
 }

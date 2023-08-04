@@ -2,6 +2,10 @@
   border-radius: 50%;
 }
 
+.no-italic {
+  font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -21,6 +25,11 @@ h1 {
 
 h2 {
   font-size: 42px;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: 400;
 }
 
 li {
@@ -116,16 +125,38 @@ article {
   text-shadow: rgba(207, 232, 243, 0.536) 1px 0 10px;
   padding: 50px;
 }
+.CatsList {
+  height: 100vh;
+}
 
 .cats {
+  background-color: rgba(253, 150, 82, 0.549);
   display: grid;
   grid-template-columns: repeat(auto-fill, 400px);
   gap: 50px;
 }
 
 .cat-li {
+  /* background-color: #f4beb2; */
+  /* height: 100vh; */
+  border: ridge #f3ad61;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
   list-style: none;
 }
 .cat-image {
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
   width: 400px;
+}
+
+.cat-headline {
+  background-color: white;
+  color: rgb(212, 85, 0);
+}
+
+.text-about-cat {
+  font-size: 24px;
+  font-weight: 500;
+  background-color: rgba(253, 150, 82, 0.549);
 }
