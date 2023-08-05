@@ -1,5 +1,11 @@
 * {
+  padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 .border-radius {
@@ -140,6 +146,7 @@ article {
   grid-template-rows: 1fr auto;
   height: 100vh;
   gap: 50px;
+  padding: 0 10rem 0 10rem;
 }
 
 .cat-li {
@@ -166,10 +173,11 @@ article {
 .cat-headline {
   background-color: white;
   color: rgb(212, 85, 0);
+  font-size: 3.2rem;
 }
 
 .text-about-cat {
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 500;
   background-color: rgba(253, 150, 82, 0.549);
   height: max-content;
