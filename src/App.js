@@ -19,6 +19,16 @@ const cats = [
     image: "./Images/",
     id: "002",
   },
+  {
+    name: "Emina",
+    Father: "unknown",
+    Mother: "unknown",
+    color: "black and white",
+    description:
+      "I am a very young girl. I am one of the most joyfull cats in the hood. I love everyone, cats, dogs, humans... One of my best friends if American Pit Bull Terrier Frida. I am pretty small for my age, and Maya and Zharko call mi Mini. Olja raised me but when I grew up a bit wend to look for my pack, and now I am under Maya and Zharko's guidance.",
+    image: "./Images/",
+    id: "003",
+  },
 ];
 
 export default function App() {
@@ -115,12 +125,14 @@ function CatsList() {
 function Cat({ cat }) {
   return (
     <li className="cat-li">
-      <img
-        className="cat-image"
-        src={cat.image + cat.name + ".jpg"}
-        alt={cat.name}
-      />
-      <h2 className="cat-headline">😸 My name is {cat.name}.</h2>
+      <div className="cat-image-div">
+        <img
+          className="cat-image"
+          src={cat.image + cat.name + ".jpg"}
+          alt={cat.name}
+        />
+      </div>
+      <h2 className="cat-headline">😸 My name is {cat.name}</h2>
       {cat.Father && (
         <p className="text-about-cat">
           <span className="no-italic">🦁</span> My father's name is {cat.Father}
