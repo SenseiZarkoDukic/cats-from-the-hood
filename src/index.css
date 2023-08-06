@@ -219,7 +219,8 @@ article {
 .text-about-cat {
   font-size: 2rem;
   font-weight: 500;
-  background-color: #23ffbda5;
+  background-color: #b8f7d7;
+
   height: max-content;
   padding: 7px;
 }
@@ -248,6 +249,11 @@ article {
   right: 0px;
   top: 50%;
   transform: translate(50%, -50%);
+}
+
+.btn-icon {
+  stroke: #087f5b;
+  stroke-width: 1.8;
 }
 
 .AddNewCat {

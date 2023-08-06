@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Carousel from "./components/Carousel";
 
 const cats = [
   {
@@ -193,7 +192,7 @@ function Cat({ cat, currCat, onCurrCat, onPrev, onNext }) {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-6 h-6 btn-icon"
         >
           <path
             strokeLinecap="round"
@@ -209,7 +208,7 @@ function Cat({ cat, currCat, onCurrCat, onPrev, onNext }) {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-6 h-6 btn-icon"
         >
           <path
             strokeLinecap="round"
