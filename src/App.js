@@ -1,3 +1,6 @@
+import { useState } from "react";
+import Carousel from "./components/Carousel";
+
 const cats = [
   {
     name: "Masha",
@@ -121,18 +124,26 @@ function AboutUs() {
 }
 
 function CatsList() {
+  const [currCat, setCurrCat] = useState("001");
+
   return (
     <div className="CatsList">
       <ul className="cats">
-        {cats.map((cat) => (
-          <Cat cat={cat} />
-        ))}
+        {cats.map((cat) =>
+          cat.id === currCat ? (
+            <div className="carousel">
+              <Cat cat={cat} currCat={currCat} onCurrCat={setCurrCat} />
+            </div>
+          ) : (
+            ""
+          )
+        )}
       </ul>
     </div>
   );
 }
 
-function Cat({ cat }) {
+function Cat({ cat, currCat, onCurrCat }) {
   return (
     <li className="cat-li">
       <div className="cat-image-div">
@@ -163,6 +174,8 @@ function Cat({ cat }) {
       <p className="text-about-cat">
         <span className="no-italic">😻</span> {cat.description}
       </p>
+      <button className="btn btn--left"></button>
+      <button className="btn btn--left"></button>
     </li>
   );
 }
