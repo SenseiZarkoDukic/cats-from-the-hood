@@ -124,15 +124,28 @@ function AboutUs() {
 }
 
 function CatsList() {
-  const [currCat, setCurrCat] = useState("001");
+  const [curr, setCurr] = useState(0);
+
+  const prev = () =>
+    setCurr((curr) => (curr === 0 ? cats.length - 1 : curr - 1));
+  const next = () =>
+    setCurr((curr) => (curr === cats.length - 1 ? 0 : curr + 1));
 
   return (
     <div className="CatsList">
+      <h1 className="CatsList-Headline">MEET OUR CATS FROM THE HOOD!</h1>
       <ul className="cats">
         {cats.map((cat) =>
-          cat.id === currCat ? (
+          cat === cats[curr] ? (
             <div className="carousel">
-              <Cat cat={cat} currCat={currCat} onCurrCat={setCurrCat} />
+              <Cat
+                cat={cat}
+                curr={curr}
+                onCurr={setCurr}
+                key={cat.id}
+                onPrev={prev}
+                onNext={next}
+              />
             </div>
           ) : (
             ""
@@ -143,7 +156,7 @@ function CatsList() {
   );
 }
 
-function Cat({ cat, currCat, onCurrCat }) {
+function Cat({ cat, currCat, onCurrCat, onPrev, onNext }) {
   return (
     <li className="cat-li">
       <img
@@ -173,7 +186,7 @@ function Cat({ cat, currCat, onCurrCat }) {
       <p className="text-about-cat">
         <span className="no-italic">😻</span> {cat.description}
       </p>
-      <button className="btn btn--left">
+      <button className="btn btn--left" onClick={onPrev}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -189,7 +202,7 @@ function Cat({ cat, currCat, onCurrCat }) {
           />
         </svg>
       </button>
-      <button className="btn btn--right">
+      <button className="btn btn--right" onClick={onNext}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

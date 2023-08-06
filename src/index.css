@@ -139,6 +139,17 @@ article {
   height: 100vh;
 }
 
+.CatsList-Headline {
+  background-color: white;
+  color: rgb(212, 85, 0);
+
+  font-size: 4.8rem;
+  box-shadow: 12px 12px 24px rgba(219, 255, 222, 0.458);
+  padding: 10px;
+  padding-top: 20px;
+  text-align: center;
+}
+
 .cats {
   background-color: rgba(253, 207, 184, 0.363);
   display: flex;
@@ -216,8 +227,8 @@ article {
 .btn {
   background-color: #fff;
   border: none;
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
   position: absolute;
