@@ -155,8 +155,10 @@ function CatsList() {
           )
         )}
       </ul>
-
-      <ListOfCats />
+      <div className="flex">
+        <ListOfCats curr={curr} />
+        <AddNewCat />
+      </div>
       <h2 className="cat-headline cats-number-h2">
         We now have <span className="cats-number-bigger">{cats.length}</span>{" "}
         cats in the hood and counting...
@@ -232,17 +234,26 @@ function Cat({ cat, currCat, onCurrCat, onPrev, onNext, imageID }) {
   );
 }
 
-function ListOfCats() {
+function ListOfCats({ curr }) {
   return (
     <div className="ListOfCats">
       {cats.map((cat) => (
         <div>
-          <img
-            className="gallery-img"
-            src={cat.image + cat.name + ".jpg"}
-            alt={cat.name}
-            key={cat.id}
-          />
+          {cat === cats[curr] ? (
+            <img
+              className="gallery-img box-shadow"
+              src={cat.image + cat.name + ".jpg"}
+              alt={cat.name}
+              key={cat.id}
+            />
+          ) : (
+            <img
+              className="gallery-img"
+              src={cat.image + cat.name + ".jpg"}
+              alt={cat.name}
+              key={cat.id}
+            />
+          )}
         </div>
       ))}
     </div>
@@ -254,6 +265,8 @@ function AddNewCat({ name }) {
     <div className="AddNewCat">
       <h1 className="add-cat-headline">Add New Cat</h1>
       <form className="addNewCatForm">
+        <label className="form-cats-entry">Enter cat's name: </label>
+        <input type="text" value={name}></input>
         <label className="form-cats-entry">Enter cat's name: </label>
         <input type="text" value={name}></input>
       </form>
