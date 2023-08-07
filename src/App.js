@@ -9,6 +9,7 @@ const cats = [
     description:
       "I am sterilized cat that loves to eat very much and very often. I specially love to be cuddled, and don't mind aggresive petting as well. I love to be with my humans and cats. Like to paw aggressive male cats. I have really strong character. Dogs and puppies, don't mess with me, I have very dangerous origin, just ask around who was Kmeka!",
     image: "./Images/",
+    imageID: crypto.randomUUID(),
     id: "001",
   },
   {
@@ -19,6 +20,7 @@ const cats = [
     description:
       "I am castrated male. Truly big cat! Love to play a lot with cats and humans and to be cuddled. I have amazing friendly character. Sofia is taking the most care of me",
     image: "./Images/",
+    imageID: crypto.randomUUID(),
     id: "002",
   },
   {
@@ -29,6 +31,7 @@ const cats = [
     description:
       "I am a very young girl. I am one of the most joyfull cats in the hood. I love everyone, cats, dogs, humans... One of my best friends if American Pit Bull Terrier Frida. I am pretty small for my age, and Maya and Zharko call mi Mini. Olja raised me but when I grew up a bit wend to look for my pack, and now I am under Maya and Zharko's guidance.",
     image: "./Images/",
+    imageID: crypto.randomUUID(),
     id: "003",
   },
   {
@@ -39,6 +42,7 @@ const cats = [
     description:
       "I was very aggresive to other cats until my humans castrated me. After that I am playfull instead. I was not from this hood, but came here and humans and cats somehow adopoted me. I like to be cuddled by humans, and I like to play with them very, very much! I am pretty strong and endlessly beautiful cat. I got my name from Maya for having special tail. ",
     image: "./Images/",
+    imageID: crypto.randomUUID(),
     id: "004",
   },
 ];
@@ -49,7 +53,6 @@ export default function App() {
       <Header />
       <AboutUs />
       <CatsList />
-      <AddNewCat />
     </div>
   );
 }
@@ -142,6 +145,7 @@ function CatsList() {
                 curr={curr}
                 onCurr={setCurr}
                 key={cat.id}
+                imageID={cat.imageID}
                 onPrev={prev}
                 onNext={next}
               />
@@ -151,14 +155,21 @@ function CatsList() {
           )
         )}
       </ul>
+
+      <ListOfCats />
+      <h2 className="cat-headline cats-number-h2">
+        We now have <span className="cats-number-bigger">{cats.length}</span>{" "}
+        cats in the hood and counting...
+      </h2>
     </div>
   );
 }
 
-function Cat({ cat, currCat, onCurrCat, onPrev, onNext }) {
+function Cat({ cat, currCat, onCurrCat, onPrev, onNext, imageID }) {
   return (
-    <li className="cat-li">
+    <li key={cat.id} className="cat-li">
       <img
+        key={imageID}
         className="cat-image"
         src={cat.image + cat.name + ".jpg"}
         alt={cat.name}
@@ -221,13 +232,30 @@ function Cat({ cat, currCat, onCurrCat, onPrev, onNext }) {
   );
 }
 
-function AddNewCat() {
+function ListOfCats() {
+  return (
+    <div className="ListOfCats">
+      {cats.map((cat) => (
+        <div>
+          <img
+            className="gallery-img"
+            src={cat.image + cat.name + ".jpg"}
+            alt={cat.name}
+            key={cat.id}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function AddNewCat({ name }) {
   return (
     <div className="AddNewCat">
       <h1 className="add-cat-headline">Add New Cat</h1>
       <form className="addNewCatForm">
-        <label>Enter cat's name</label>
-        <input type="text"></input>
+        <label className="form-cats-entry">Enter cat's name: </label>
+        <input type="text" value={name}></input>
       </form>
     </div>
   );

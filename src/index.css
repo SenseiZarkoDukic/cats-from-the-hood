@@ -57,7 +57,7 @@ article {
 
 .App {
   display: grid;
-  grid-template-rows: repeat(4, [col-start] 1fr [col-end]);
+  grid-template-rows: repeat(5, [col-start] 1fr [col-end]);
 }
 
 .App-header {
@@ -137,6 +137,7 @@ article {
 }
 .CatsList {
   height: 100vh;
+  grid-row: 3/5;
 }
 
 .CatsList-Headline {
@@ -146,7 +147,7 @@ article {
   font-size: 4.8rem;
   box-shadow: 12px 12px 24px rgba(219, 255, 222, 0.458);
   padding: 10px;
-  padding-top: 20px;
+  padding-top: 10px;
   text-align: center;
 }
 
@@ -157,17 +158,18 @@ article {
 
   align-items: center;
   gap: 50px;
-  padding: 0 10rem 0 10rem;
+  /* padding: 0 10rem 0 10rem; */
 }
 .carousel {
   width: 800px;
   margin: 100px auto;
   background-color: #087f5b;
-  padding: 32px 48px 32px 86px;
+  padding: 12px 48px 12px 48px;
   border-radius: 8px;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 86px;
+  /* gap: 86px; */
   position: relative;
 }
 
@@ -181,10 +183,13 @@ article {
   flex-direction: column;
   /* background-color: #f4beb2; */
   height: 100vh;
+
   border: ridge #f3ad61;
   border-top-left-radius: 20%;
   border-top-right-radius: 20%;
   list-style: none;
+  margin-right: 4rem;
+  margin-left: 4rem;
 }
 /* 
 .cat-image-div {
@@ -214,6 +219,16 @@ article {
   padding: 10px;
   padding-top: 20px;
   text-align: center;
+}
+
+.cats-number-h2 {
+  padding-top: 140px;
+  font-size: 5.2rem;
+}
+
+.cats-number-bigger {
+  font-style: bolder;
+  font-style: italic;
 }
 
 .text-about-cat {
@@ -256,12 +271,41 @@ article {
   stroke-width: 1.8;
 }
 
+.ListOfCats {
+  display: grid;
+
+  grid-template-columns: repeat(7, [col-start] 1fr [col-end]);
+  /* height: 100vh;
+  width: 100vw; */
+
+  align-self: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.gallery-img {
+  width: 200px;
+}
+
 .AddNewCat {
+  display: grid;
+  grid-template-rows: repeat(5, [col-start] 1fr [col-end]);
+  gap: 50px;
+  align-items: center;
   height: 100vh;
-  justify-self: center;
-  grid-column: 5, -1;
-  grid-row: auto;
+  width: 100vw;
+  text-align: center;
+  background-color: rgba(118, 157, 28, 0.455);
+
+  align-self: center;
+  padding: 150px;
 }
 
 .add-cat-headline {
+  background-color: #087f5b;
+  color: #fff;
+}
+
+.addNewCatForm {
+  font-size: 1.8rem;
 }
