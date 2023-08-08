@@ -338,13 +338,20 @@ function AddNewCat({ newIdNumber, onNewIdNumber, onAddNewCat, allCats }) {
           value={color}
           onChange={(e) => setColor(e.target.value)}
         ></input>
-        <label className="form-cats-entry">Enter decription of the cat: </label>
-        <input
-          className="form-input-field"
+        <label className="form-cats-entry">
+          Enter decription of the cat:{" "}
+          <span className="min-length">(min. 50 characters)</span>{" "}
+        </label>
+        <textarea
+          minlength="50"
+          className="form-input-field form-description"
           type="text"
+          cols="40"
+          rows="5"
+          name="Text1"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-        ></input>
+        ></textarea>
         <button>Add</button>
       </form>
     </div>

@@ -335,3 +335,11 @@ article {
 .form-input-field {
   height: 40px;
 }
+
+.min-length {
+  font-size: 1.2rem;
+}
+
+.form-description {
+  height: 40rem;
+}
