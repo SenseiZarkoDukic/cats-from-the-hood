@@ -352,7 +352,13 @@ function AddNewCat({ newIdNumber, onNewIdNumber, onAddNewCat, allCats }) {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
-        <button>Add</button>
+        <button
+          className="btn--add-cat box-shadow-lighter"
+          on
+          onClick={() => handleSubmit}
+        >
+          Add
+        </button>
       </form>
     </div>
   );

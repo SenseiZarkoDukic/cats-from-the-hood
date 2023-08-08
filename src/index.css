@@ -282,6 +282,10 @@ article {
   box-shadow: 0 12px 24px rgb(0, 0, 0);
 }
 
+.box-shadow-lighter {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.368);
+}
+
 .ListOfCats {
   display: grid;
 
@@ -341,5 +345,19 @@ article {
 }
 
 .form-description {
-  height: 40rem;
+  height: 20rem;
+}
+
+.btn--add-cat {
+  background-color: #087f5b;
+  color: #fff;
+  font-size: 3.6rem;
+  font-weight: 800;
+  width: 15rem;
+  height: 7rem;
+  justify-self: center;
+  grid-column: -3/-1;
+  border-radius: 30%;
+  margin-top: 10rem;
+  cursor: pointer;
 }
