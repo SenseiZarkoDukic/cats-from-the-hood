@@ -48,7 +48,7 @@ const cats = [
 ];
 
 export default function App() {
-  const [newIdNumber, setNewIdNumber] = useState("");
+  const [newIdNumber, setNewIdNumber] = useState(4);
   const [allCats, setAllCats] = useState(cats);
 
   function handleAddNewCat(cat) {
@@ -62,6 +62,7 @@ export default function App() {
         newIdNumber={newIdNumber}
         onNewIdNumber={setNewIdNumber}
         onAddNewCat={handleAddNewCat}
+        allCats={allCats}
       />
     </div>
   );
@@ -135,20 +136,20 @@ function AboutUs() {
   );
 }
 
-function CatsList({ newIdNumber, onNewIdNumber }) {
+function CatsList({ newIdNumber, onNewIdNumber, onAddNewCat, allCats }) {
   const [curr, setCurr] = useState(0);
 
   const prev = () =>
-    setCurr((curr) => (curr === 0 ? cats.length - 1 : curr - 1));
+    setCurr((curr) => (curr === 0 ? allCats.length - 1 : curr - 1));
   const next = () =>
-    setCurr((curr) => (curr === cats.length - 1 ? 0 : curr + 1));
+    setCurr((curr) => (curr === allCats.length - 1 ? 0 : curr + 1));
 
   return (
     <div className="CatsList">
       <h1 className="CatsList-Headline">MEET OUR CATS FROM THE HOOD!</h1>
       <ul className="cats">
-        {cats.map((cat) =>
-          cat === cats[curr] ? (
+        {allCats.map((cat) =>
+          cat === allCats[curr] ? (
             <div className="carousel">
               <Cat
                 cat={cat}
@@ -166,15 +167,16 @@ function CatsList({ newIdNumber, onNewIdNumber }) {
         )}
       </ul>
       <div className="flex">
-        <ListOfCats curr={curr} />
+        <ListOfCats curr={curr} allCats={allCats} />
         <AddNewCat
           newIdNumber={newIdNumber}
           onNewIdNumber={onNewIdNumber}
-          onAddNewCat
+          onAddNewCat={onAddNewCat}
+          allCats={allCats}
         />
       </div>
       <h2 className="cat-headline cats-number-h2">
-        We now have <span className="cats-number-bigger">{cats.length}</span>{" "}
+        We now have <span className="cats-number-bigger">{allCats.length}</span>{" "}
         cats in the hood and counting...
       </h2>
     </div>
@@ -248,12 +250,12 @@ function Cat({ cat, currCat, onCurrCat, onPrev, onNext, imageID }) {
   );
 }
 
-function ListOfCats({ curr }) {
+function ListOfCats({ curr, allCats }) {
   return (
     <div className="ListOfCats">
-      {cats.map((cat) => (
+      {allCats.map((cat) => (
         <div>
-          {cat === cats[curr] ? (
+          {cat === allCats[curr] ? (
             <img
               className="gallery-img box-shadow"
               src={cat.image + cat.name + ".jpg"}
@@ -274,30 +276,76 @@ function ListOfCats({ curr }) {
   );
 }
 
-function AddNewCat({ newIdNumber, onNewIdNumber }) {
+function AddNewCat({ newIdNumber, onNewIdNumber, onAddNewCat, allCats }) {
   const [name, setName] = useState("");
   const [Father, setFather] = useState("");
   const [Mother, setMother] = useState("");
   const [color, setColor] = useState("");
   const [description, setDescription] = useState("");
-  const catImage = "./Images/" + { name } + ".jpg";
 
-  const imageID = crypto.randomUUID();
+  function handleSubmit(e) {
+    e.preventDefault();
 
-  const id = newIdNumber;
+    const catImage = "./Images/";
 
+    const imageID = crypto.randomUUID();
+    const id = allCats.length + 1;
+
+    if (!name || !Father || !Mother || !color || !description) return;
+    const newCat = {
+      name,
+      Father,
+      Mother,
+      color,
+      description,
+      image: `${catImage}`,
+      imageID: `${imageID}`,
+      id: `${id}`,
+    };
+    onAddNewCat(newCat);
+    console.log(newCat, id);
+  }
+  console.log(allCats.length);
   return (
     <div className="AddNewCat">
       <h1 className="add-cat-headline">Add New Cat</h1>
-      <form className="addNewCatForm">
+      <form className="addNewCatForm" onSubmit={handleSubmit}>
         <label className="form-cats-entry">Enter cat's name: </label>
-        <input className="form-input-field" type="text" value={name}></input>
+        <input
+          className="form-input-field"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        ></input>
         <label className="form-cats-entry">Enter cat's father name: </label>
-        <input className="form-input-field" type="text" value={Father}></input>
+        <input
+          className="form-input-field"
+          type="text"
+          value={Father}
+          onChange={(e) => setFather(e.target.value)}
+        ></input>
         <label className="form-cats-entry">Enter cat's mother name: </label>
-        <input className="form-input-field" type="text" value={Mother}></input>
+        <input
+          className="form-input-field"
+          type="text"
+          value={Mother}
+          onChange={(e) => setMother(e.target.value)}
+        ></input>
         <label className="form-cats-entry">Enter cat's color: </label>
-        <input className="form-input-field" type="text" value={color}></input>
+        <input
+          className="form-input-field"
+          type="text"
+          value={color}
+          onChange={(e) => setColor(e.target.value)}
+        ></input>
+        <label className="form-cats-entry">Enter decription of the cat: </label>
+        <input
+          className="form-input-field"
+          type="text"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        ></input>
+        <button>Add</button>
       </form>
     </div>
   );
