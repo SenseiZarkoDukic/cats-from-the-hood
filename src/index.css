@@ -318,5 +318,20 @@ article {
 }
 
 .addNewCatForm {
-  font-size: 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  align-items: center;
+  justify-items: stretch;
+  color: #0a3e2f;
+  font-size: 3.8rem;
+}
+
+.form-cats-entry {
+  justify-self: first baseline;
+  padding: 10px;
+}
+
+.form-input-field {
+  height: 40px;
 }
