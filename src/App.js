@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const cats = [
   {
@@ -55,39 +56,25 @@ export default function App() {
     setAllCats((allCats) => [...allCats, cat]);
   }
   return (
-    <div className="App">
-      <Header />
-      <AboutUs />
-      <CatsList
-        newIdNumber={newIdNumber}
-        onNewIdNumber={setNewIdNumber}
-        onAddNewCat={handleAddNewCat}
-        allCats={allCats}
-      />
-    </div>
-  );
-}
-
-function Header() {
-  return (
-    <header className="App-header">
-      <Logo />
-      <div className="headline">
-        <h1>CATS FROM THE HOOD</h1>
-        <p>Get your lucky 💫 cat! 🐈‍⬛🐈</p>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route exact path="/"></Route>
+          <Route path="/AboutUs">
+            <AboutUs />
+          </Route>
+          <Route path="/CatsList">
+            <CatsList
+              newIdNumber={newIdNumber}
+              onNewIdNumber={setNewIdNumber}
+              onAddNewCat={handleAddNewCat}
+              allCats={allCats}
+            />
+          </Route>
+        </Routes>
       </div>
-      <Menu />
-    </header>
-  );
-}
-
-function Logo() {
-  return (
-    <img
-      className="logo"
-      src=".\Images\Cats_LOGO.jpg"
-      alt="cats from the hood logo"
-    />
+    </Router>
   );
 }
 
@@ -96,8 +83,12 @@ function Menu() {
     <div className="Menu">
       <h1 className="navigation">Navigation</h1>
       <ul className="navigation-list">
-        <li>Home</li>
-        <li>About us</li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/#AboutUs">About us</Link>
+        </li>
         <li>Our cats</li>
         <li>Add new cat</li>
         <li>Contact us</li>
@@ -108,7 +99,7 @@ function Menu() {
 
 function AboutUs() {
   return (
-    <article className="AboutUs">
+    <article className="AboutUs" id="AboutUs">
       <h2 className="headline-small">ABOUT US</h2>
       <main className="main">
         <div className="border-radius">
