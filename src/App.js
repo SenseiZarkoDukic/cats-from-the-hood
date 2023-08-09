@@ -3,6 +3,12 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Header";
 import AboutUs from "./AboutUs";
 import CatsList from "./CatsList";
+import Cat from "./Cat";
+import ListOfCats from "./ListOfCats";
+import AddNewCat from "./AddNewCat";
+import Menu from "./Menu";
+import Logo from "./Logo";
+import NavBar from "./NavBar";
 
 const cats = [
   {
@@ -61,21 +67,37 @@ export default function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
-        <Routes>
-          <Route exact path="/"></Route>
-          <Route path="/AboutUs">
-            <AboutUs />
-          </Route>
-          <Route path="/CatsList">
-            <CatsList
-              newIdNumber={newIdNumber}
-              onNewIdNumber={setNewIdNumber}
-              onAddNewCat={handleAddNewCat}
-              allCats={allCats}
-            />
-          </Route>
-        </Routes>
+        <NavBar />
+        <div className="content">
+          <Routes>
+            <Route exact path="/" element={<Header />}>
+              <Route exact path="/Logo" element={<Logo />} />
+            </Route>
+            <Route exact path="/Menu" element={<Menu />} />
+            <Route exact path="/AboutUs" element={<AboutUs />} />
+            <Route
+              exact
+              path="/CatsList"
+              element={
+                <CatsList
+                  newIdNumber={newIdNumber}
+                  onNewIdNumber={setNewIdNumber}
+                  onAddNewCat={handleAddNewCat}
+                  allCats={allCats}
+                />
+              }
+            >
+              <Route exact path="/CatsList/Cat" element={<Cat />} />
+
+              <Route
+                exact
+                path="/CatsList/ListOfCats"
+                element={<ListOfCats />}
+              />
+            </Route>
+            <Route exact path="/AddNewCat" element={<AddNewCat />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );

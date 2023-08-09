@@ -1,6 +1,6 @@
 export default function AboutUs() {
   return (
-    <article className="AboutUs" id="AboutUs">
+    <article className="AboutUs">
       <h2 className="headline-small">ABOUT US</h2>
       <main className="main">
         <div className="border-radius">

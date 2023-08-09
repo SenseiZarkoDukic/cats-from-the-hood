@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Cat from "./Cat";
 import ListOfCats from "./ListOfCats";
+import AddNewCat from "./AddNewCat";
 
 export default function CatsList({
   newIdNumber,
