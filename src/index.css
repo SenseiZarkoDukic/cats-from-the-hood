@@ -114,13 +114,19 @@ article {
   border: 0.5rem solid rgba(220, 70, 50, 0.284);
   border-radius: 50%;
 }
+.header-clipart {
+  width: 35rem;
+  height: 35rem;
+  align-self: center;
+  border-radius: 10%;
+}
 
 .headline {
   display: flex;
   flex-direction: column;
   border: 0.5rem solid rgba(220, 70, 50, 0.284);
-  border-radius: 50%;
-  gap: 15rem;
+  border-radius: 10%;
+  /* gap: 15rem; */
 }
 
 .Menu {
@@ -129,7 +135,7 @@ article {
   border-radius: 50%;
 }
 
-.navigation {
+/* .navigation {
   font-style: italic;
   font-weight: 650;
 }
@@ -139,7 +145,7 @@ article {
   font-size: 36px;
   font-style: italic;
   text-decoration: underline;
-}
+} */
 
 .AboutUs {
   height: 100vh;
@@ -147,11 +153,11 @@ article {
   font-size: 36px;
   text-align: center;
   justify-self: center;
-  padding: 50px;
+  padding: 30px;
 }
 
 .headline-small {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 .main {

@@ -6,8 +6,12 @@ export default function Header() {
     <header className="App-header">
       <Logo />
       <div className="headline">
-        <h1>CATS FROM THE HOOD</h1>
-        <img src=".\Images\cat-hello-clipart.jpg" />
+        <h1>CATS FROM OUR HOOD</h1>
+        <img
+          className="header-clipart"
+          src=".\Images\cat-hello-clipart.jpg"
+          alt="cat clipart"
+        />
         <p>Get your lucky 💫 cat! 🐈‍⬛🐈</p>
       </div>
       {/* <Menu /> */}

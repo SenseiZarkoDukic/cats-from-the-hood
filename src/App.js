@@ -94,8 +94,8 @@ export default function App() {
                 path="/CatsList/ListOfCats"
                 element={<ListOfCats />}
               />
+              <Route exact path="/CatsList/AddNewCat" element={<AddNewCat />} />
             </Route>
-            <Route exact path="/AddNewCat" element={<AddNewCat />} />
           </Routes>
         </div>
       </div>
