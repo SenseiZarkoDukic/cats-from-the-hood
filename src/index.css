@@ -105,12 +105,12 @@ article {
   gap: 100px;
   padding: 50px;
 
-  background-color: rgba(253, 207, 184, 0.363);
+  background-color: #fdcfb85d;
 }
 
 .logo {
-  width: 350px;
-  height: 350px;
+  width: 50rem;
+  height: 50rem;
   border: 0.5rem solid rgba(220, 70, 50, 0.284);
   border-radius: 50%;
 }
@@ -118,7 +118,9 @@ article {
 .headline {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  border: 0.5rem solid rgba(220, 70, 50, 0.284);
+  border-radius: 50%;
+  gap: 15rem;
 }
 
 .Menu {

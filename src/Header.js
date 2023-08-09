@@ -7,9 +7,10 @@ export default function Header() {
       <Logo />
       <div className="headline">
         <h1>CATS FROM THE HOOD</h1>
+        <img src=".\Images\cat-clipart.jpg" />
         <p>Get your lucky 💫 cat! 🐈‍⬛🐈</p>
       </div>
-      <Menu />
+      {/* <Menu /> */}
     </header>
   );
 }
