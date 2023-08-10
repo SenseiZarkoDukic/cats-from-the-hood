@@ -22,12 +22,12 @@ export default function CatsList({
       <ul className="cats">
         {allCats.map((cat) =>
           cat === allCats[curr] ? (
-            <div className="carousel">
+            <div className="carousel" key={cat}>
               <Cat
                 cat={cat}
                 curr={curr}
                 onCurr={setCurr}
-                key={cat.id}
+                keyId={cat.id.toString()}
                 imageID={cat.imageID}
                 onPrev={prev}
                 onNext={next}

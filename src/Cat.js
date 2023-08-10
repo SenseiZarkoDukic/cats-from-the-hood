@@ -5,9 +5,10 @@ export default function Cat({
   onPrev,
   onNext,
   imageID,
+  keyId,
 }) {
   return (
-    <li key={cat.id} className="cat-li">
+    <li key={keyId} className="cat-li">
       <img
         key={imageID}
         className="cat-image"
@@ -16,18 +17,15 @@ export default function Cat({
       />
 
       <h2 className="cat-headline">😸 My name is {cat.name}</h2>
-      {cat.Father && (
-        <p className="text-about-cat">
-          <span className="no-italic">🦁</span> My father's name is {cat.Father}
-          .
-        </p>
-      )}
-      {cat.Mother && (
-        <p className="text-about-cat">
-          <span className="no-italic">🐯</span> My Mother's name is {cat.Mother}
-          .
-        </p>
-      )}
+
+      <p className="text-about-cat">
+        <span className="no-italic">🦁</span> My father's name is {cat.Father}.
+      </p>
+
+      <p className="text-about-cat">
+        <span className="no-italic">🐯</span> My Mother's name is {cat.Mother}.
+      </p>
+
       <p className="text-about-cat">
         <span className="no-italic">🐈‍⬛</span> The color of my fur is {cat.color}
         .

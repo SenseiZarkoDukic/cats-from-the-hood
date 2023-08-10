@@ -17,8 +17,8 @@ export default function AddNewCat({
 
     const catImage = "./Images/";
 
-    const imageID = crypto.randomUUID();
-    const id = allCats.length + 1;
+    const imageID = crypto.randomUUID().toString();
+    const id = (allCats.length + 1).toString();
 
     if (!name || !Father || !Mother || !color || !description) return;
     const newCat = {
@@ -27,12 +27,11 @@ export default function AddNewCat({
       Mother,
       color,
       description,
-      image: `${catImage}`,
-      imageID: `${imageID}`,
-      id: `${id}`,
+      image: catImage,
+      imageID: imageID,
+      id: id,
     };
     onAddNewCat(newCat);
-    console.log(newCat, id);
   }
   console.log(allCats.length);
   return (
@@ -72,7 +71,7 @@ export default function AddNewCat({
           <span className="min-length">(min. 50 characters)</span>{" "}
         </label>
         <textarea
-          minlength="50"
+          minLength="50"
           className="form-input-field form-description"
           type="text"
           cols="40"
@@ -83,8 +82,7 @@ export default function AddNewCat({
         ></textarea>
         <button
           className="btn--add-cat box-shadow-lighter"
-          on
-          onClick={() => handleSubmit}
+          onClick={handleSubmit}
         >
           Add
         </button>
